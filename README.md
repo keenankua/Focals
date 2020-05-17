@@ -8,5 +8,6 @@ Mock brand with the main focus to practice:
 - Turning a design into a real site
 - Sass
 - CSS Grid
+- More interesting positioning and interaction of elements
 
 Tools: Figma, HTML, CSS, Sass, Javascript
