@@ -1,0 +1,56 @@
+#landing {
+  height: 100vh;
+  background: url(../images/landing-bg.jpg);
+  background-size: cover;
+  background-position: 80% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+
+  .tagline {
+    font-size: 6rem;
+    font-family: map-get($fonts, text-heading);
+    color: map-get($colours, background-primary);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    margin: 2.5rem;
+    white-space: pre-line;
+  }
+}
+
+@media (min-width: 480px) {
+  #landing {
+    .tagline {
+      font-size: 8.5rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #landing {
+    .tagline {
+      font-size: 10rem;
+      text-align: left;
+      left: 15rem;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #landing {
+    .tagline {
+      font-size: 12rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #landing {
+    .tagline {
+      font-size: 14rem;
+      left: 17rem;
+    }
+  }
+}
