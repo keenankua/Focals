@@ -1,0 +1,249 @@
+$colours: (
+  background-primary: #ffffff,
+  text-heading: #c2c2c2,
+  text-primary: #4e4e4e,
+  text-primary-hover: #6b6b6b,
+  text-label: #cecece,
+  accent: #c3a9a9,
+  nav: #c3a9a973,
+);
+
+$fonts: (
+  brand-primary: (
+    "Asar",
+    serif,
+  ),
+  text-heading: (
+    "Arsenal",
+    sans-serif,
+  ),
+  text-primary: (
+    "Asap",
+    sans-serif,
+  ),
+);
+
+@import "./_landing.scss";
+@import "./_about.scss";
+@import "./_work.scss";
+@import "./_contact.scss";
+@import "./_footer.scss";
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+body {
+  font-family: map-get($fonts, text-primary);
+  color: map-get($colours, text-text);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-wrapper {
+  // For fixed footer uncover
+  margin-bottom: 25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+  background: map-get($colours, nav);
+  z-index: 3;
+
+  .logo {
+    font-size: 3.6rem;
+    font-family: map-get($fonts, brand-primary);
+    color: map-get($colours, background-primary);
+    line-height: 1;
+  }
+
+  .nav-links {
+    font-family: map-get($fonts, text-heading);
+    font-weight: 700;
+    font-size: 2rem;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    text-align: right;
+    left: 0;
+    top: 7.6rem;
+    width: 100%;
+    background: map-get($colours, nav);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    li {
+      padding: 1rem;
+
+      a {
+        color: map-get($colours, background-primary);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .burger {
+    cursor: pointer;
+  }
+
+  .burger div {
+    width: 2.5rem;
+    height: 0.2rem;
+    margin: 0.6rem 0;
+    background-color: map-get($colours, background-primary);
+    transition: transform 0.3s ease;
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-0.5rem, 0.6rem);
+  }
+
+  .toggle .line2 {
+    opacity: 0;
+  }
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-0.5rem, -0.6rem);
+  }
+
+  .nav-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+section {
+  background: map-get($colours, background-primary);
+}
+
+.section-header {
+  font-size: 2.4rem;
+  font-family: map-get($fonts, text-heading);
+  font-weight: 700;
+  color: map-get($colours, text-heading);
+}
+
+.section-text {
+  font-size: 1.8rem;
+  font-family: map-get($fonts, text-primary);
+}
+
+*::placeholder {
+  color: map-get($colours, text-label);
+}
+
+@media (min-width: 480px) {
+  .navbar {
+    .nav-links {
+      top: 8.5rem;
+    }
+
+    .logo {
+      font-size: 4.5rem;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    margin-bottom: 30rem;
+  }
+
+  .navbar {
+    width: 100vh;
+    max-width: none;
+    transform: rotate(-90deg) translateX(-100%) translateY(33%);
+    transform-origin: top left;
+    padding: 2rem 5rem;
+
+    .logo {
+      font-size: 5rem;
+    }
+
+    .nav-links {
+      opacity: 1;
+      flex-direction: row;
+      position: initial;
+      margin: 0;
+      background: none;
+      pointer-events: auto;
+
+      li:not(:last-child) {
+        margin-right: 7rem;
+      }
+    }
+
+    .burger {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .section-header {
+    font-size: 3rem;
+  }
+
+  .section-text {
+    font-size: 2.1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content-wrapper {
+    margin-bottom: 35rem;
+  }
+
+  .navbar {
+    padding: 2.5rem 5rem;
+
+    .logo {
+      font-size: 6rem;
+    }
+
+    .nav-links {
+      li:not(:last-child) {
+        margin-right: 7rem;
+      }
+    }
+
+    .section-text {
+      font-size: 2.4rem;
+    }
+  }
+
+  .section-header {
+    font-size: 3.6rem;
+  }
+}

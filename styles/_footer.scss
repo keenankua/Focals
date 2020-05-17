@@ -1,0 +1,105 @@
+#footer {
+  background: map-get($colours, accent);
+  height: 25rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+
+  .footer-main {
+    font-size: 1.8rem;
+    color: map-get($colours, text-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .direct-info {
+      text-align: center;
+      font-style: italic;
+
+      .phone {
+        i {
+          font-size: 1.6rem;
+          margin-right: 0.5rem;
+        }
+
+        &:hover {
+          color: map-get($colours, text-primary-hover);
+        }
+      }
+
+      .address {
+        white-space: pre-line;
+        margin-top: 1rem;
+      }
+    }
+
+    .connect {
+      text-align: center;
+
+      .connect-header {
+        font-family: map-get($fonts, text-heading);
+        font-weight: 700;
+        margin-top: 1.5rem;
+      }
+
+      i {
+        font-size: 2.5rem;
+        padding: 1rem;
+        margin: 0 0.5rem;
+
+        &:hover {
+          color: map-get($colours, text-primary-hover);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #footer {
+    height: 30rem;
+
+    .footer-main {
+      flex-direction: row;
+      justify-content: center;
+
+      .direct-info {
+        text-align: left;
+        padding-left: 1rem; //account for icon padding of 1 rem
+      }
+
+      .connect {
+        padding-left: 5rem;
+
+        .connect-header {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #footer {
+    height: 35rem;
+
+    .footer-main {
+      .connect {
+        padding-left: 7.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1450px) {
+  #footer {
+    .footer-main {
+      .connect {
+        padding-left: 9.5rem;
+      }
+    }
+  }
+}
